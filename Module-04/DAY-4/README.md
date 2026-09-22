@@ -29,21 +29,53 @@
  ```
 /*
 Program to implement a final & Static using Java
-Developed by: 
-RegisterNumber:  
+Developed by: SANTHOSH V
+RegisterNumber: 212224230252
 */
 ```
 
 ## Sourcecode.java:
 
+```
+final class Student {
+    String Name;
+    String Id;
+    final String Year = "3th Year"; // Final variable with a fixed value
 
+    // Constructor to initialize Name and Id
+    Student(String Name, String Id) {
+        this.Name = Name;
+        this.Id = Id;
+    }
+
+    // Method to display the details
+    void print() {
+        System.out.println("Student Details are,");
+        System.out.println("Id is " + Id);
+        System.out.println("Name is " + Name);
+        System.out.println("Year of Studying is " + Year);
+    }
+}
+
+// Main class to test the functionality
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of Student class with given Name and Id
+        Student student = new Student("David", "S201");
+
+        // Call the print method to display the details
+        student.print();
+    }
+}
+
+```
 
 
 
 
 
 ## OUTPUT:
-
+<img width="558" alt="Image" src="https://github.com/user-attachments/assets/02e296c7-1a4b-4abf-87bd-cd67d25cc525" />
 
 
 ## RESULT:
