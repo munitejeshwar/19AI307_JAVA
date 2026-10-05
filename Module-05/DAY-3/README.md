@@ -1,80 +1,58 @@
-# Ex.No:5(C)    GETTER AND SETTER METHOD
+# Ex.No:5(C)  FILE HANDLING USING JAVA
+## QUESTION:
+Write a Java program to create a new file named example.txt.
 
 ## AIM:
-To Create a java program to print the sum of two number using getter and setter method.
+To write a Java program that creates a new file named example.txt using the File class and handles any possible I/O exceptions.
 
 ## ALGORITHM :
-1.  Start the Program
-2.	Define class `Employee`:
--	a) Private variables `n1` and `n2`
--	b) Method `setsum(int n1, int n2)` to set values of `n1` and `n2`
--	c) Method `getsum()` to calculate and print `sum = n1 + n2`
-3.	In `main` class `main` method:
--	a) Use `Scanner` to read integers `n1` and `n2`
--	b) Create ` Employee ` object, set values, and call `getsum()`
-4.	End
+1. Create a File object pointing to "example.txt".
+
+2. Call the createNewFile() method to attempt creating the file.
+
+3. If the method returns true, print that the file was created.
+
+4. If it returns false, print that the file already exists.
+
+5. Surround the file-creation logic with a try–catch block to handle IOException.
+
+
+
 
 
 ## PROGRAM:
  ```
-/*
-Program to implement a Getter and Setter using Java
+Program to implement a File Handling using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
+```java
+import java.io.File;
+import java.io.IOException;
 
-```
-import java.util.*;
-public class SetAndGet {
- 
- private int w;
- private int h;
-
-
-public int getWidth() {
- return w;
-}
-
-public void setWidth(int w) {
- this.w = w;
-}
-
-public int getHeight() {
- return h;
-}
-
-public void setHeight(int h) {
- this.h = h;
-}
-
-
-public static void main(String args[]){
- Scanner sc=new Scanner(System.in);
- SetAndGet obj = new SetAndGet();
- int s1=sc.nextInt();
- int s2=sc.nextInt();
- 
- obj.setWidth(s1);
- obj.setHeight(s2);
- System.out.println(obj.getWidth() * obj.getHeight());
-
-}
-
-
+public class CreateNewFileExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
 }
 ```
+
 ## OUTPUT:
+<img width="768" height="255" alt="image" src="https://github.com/user-attachments/assets/ae4f968a-af58-4f91-8e79-baeea0fd9f29" />
 
-<img width="500" alt="Image" src="https://github.com/user-attachments/assets/c241b933-57b2-460b-aed8-b047ef4645b0" />
 
 ## RESULT:
-Thus the java program to print the sum of two number using getter and setter method was executed successfully.
-
-
-
-
+Therefore the program successfully creates a new file named example.txt if it does not already exist.
 
 
