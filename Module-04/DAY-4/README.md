@@ -29,8 +29,8 @@
  ```
 /*
 Program to implement a final & Static using Java
-Developed by: SANTHOSH V
-RegisterNumber: 212224230252
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 */
 ```
 
