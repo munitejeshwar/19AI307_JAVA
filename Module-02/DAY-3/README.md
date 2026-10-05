@@ -1,87 +1,96 @@
-# Ex.No:2(C)    SINGLE ARRAY
+# Ex.No:2(C) ACCESS SPECIFIERS
+
+## QUESTION:
+Write a Java program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.
 
 ## AIM:
-To create a java program to read 5 values and display the all 5 values from array using single dimensional array.
+To write a Java program that defines a class BankAccount with private attributes accountNumber and balance, and provides public getter and setter methods to access and modify these values.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	2.	Import the `Scanner` class from the `java.util` package
-3.	Define a class named `ArrayExample`
-4.	Inside the `main` method:
--	a) Create a `Scanner` object called `scanner` to take user input
--	b) Declare an integer array `values` of size 5
--	c) Use a `for` loop to iterate from `i = 0` to `i < 5`:
--   d) Take input from the user and store it in `values[i]`
-5.	Print "Elements in Array are :"
-6.	Use another `for` loop to iterate from `i = 0` to `i < 5`:
--	a) Print each element in `values` followed by a space
-7.	Close the `scanner` to release resources
-8.	End
+1. Define a class BankAccount with two private instance variables:
+
+        String accountNumber
+
+        double balance
+
+3. Create public getter and setter methods for both variables:
+
+      getAccountNumber() and setAccountNumber()
+   
+   
+      getBalance() and setBalance()
+
+5. In the main() method, create a Scanner object to read input from the user.
+
+6. Create an object of the BankAccount class.
+
+7. Read the account number and balance from the user and store them using setter methods.
+
+8. Retrieve and print the stored values using getter methods.
+
+9. Close the Scanner and end the program.
 
 
 
 
 
 ## PROGRAM:
- ```
-/*
-Program to implement a Single Array using Java
+```
+Program to implement a Access Specifiers using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
-```
+## SOURCE CODE:
+```java
+import java.util.Scanner;
 
-import java.util.*;
+class BankAccount {
+   
+    private String accountNumber;
+    private double balance;
 
-public class Main
-{
-   public static void main(String args[])
-   {    
+    
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
-	Scanner sc=new Scanner(System.in);
-	
-	int a[]=new int[5];//declaration    	 
-	
-        for(int i=0; i<5; i++)
-        {
-           a[i] = sc.nextInt();
-        }   
-        System.out.print("Elements in Array are :\n");
-        for(int i=0; i<5; i++)
-        {
-           System.out.print(a[i] + "  ");
-        }  
-   }
+   
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }
-	
 
+public class prog {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        BankAccount account = new BankAccount();
+
+        String accNo = sc.nextLine();
+        double bal = sc.nextDouble();
+
+        account.setAccountNumber(accNo);
+        account.setBalance(bal);
+
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Balance: " + account.getBalance());
+
+        sc.close();
+    }
+}
 ```
-
-
-
-
-
 
 ## OUTPUT:
-```
-Input       Expected                                  Got
-
-3           Elements in Array are :                   Elements in Array are :                   
-            3  4  5  6  7                             3  4  5  6  7
-4
-5
-6
-7
-
-
-```
+<img width="826" height="465" alt="image" src="https://github.com/user-attachments/assets/972c4fcf-d9d0-43f8-bc30-518764a4d55e" />
 
 
 ## RESULT:
-Thus, the Java program Thus the java program to read 5 values and display the all 5 values from array using single dimensional  was executed successfully.
-
+Therfore the program successfully stores account details using setter methods and retrieves them using getter methods.
 
