@@ -30,8 +30,8 @@ To create  a Java program to perform the inheritance concept for employee detail
  ```
 /*
 Program to implement a Inheritance using Java
-Developed by: SANTHOSH V
-RegisterNumber: 212224230252
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 */
 ```
 
