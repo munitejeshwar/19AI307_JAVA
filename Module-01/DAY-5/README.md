@@ -1,53 +1,59 @@
-# Ex.No:1(E)  STATIC VARIABLE
+# Ex.No:1(E) STRINGS AND MATH FUNCTION
+
+## QUESTION:
+Write a Java program to calculate the power of a given number.
 
 ## AIM:
-To write a Java program that determines whether a given number is odd or even using a static method. The input number is passed directly to the method, and the result is printed using simple conditional logic.
+To write a java program to calculate the power of a given number.
 
 ## ALGORITHM :
-1. Start the program.
+- Start the program.
 
-2. Define a class named `Main`.
+- Import the necessary packages (java.util.Scanner and java.lang.Math).
 
-3. In the `main()` method:
-   a) Declare an integer variable `num` and assign it the value `7`.
-   b) Call the static method `find_Oddeven(num)` and pass `num` as an argument.
+- Create a Scanner object to accept input from the user.
 
-4. Define a static method named `find_Oddeven(int num)`:
-   a) Check if `num % 2 == 0`.
-      - If true, print "`num` is even".
-      - Otherwise, print "`num` is odd".
+- Read two numerical values, n (base) and m (exponent), from the user using sc.nextInt().
 
-5. End the program.
+- Calculate the power using the predefined function Math.pow(n, m) and store the result in the variable pow.
+
+- Print the calculated power using formatted output (System.printf).
+
+- Stop the program.
+
 
 
 ## PROGRAM:
  ```
-/*
-Program to implement a Static Variable using Java
+Program to implement a Strings and Math Function using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
-```
+## SOURCE CODE:
+
+```java
 import java.util.Scanner;
+import java.lang.Math;
 public class Main{
-public static void main (String[] args){
-int num=7;
-find_Oddeven(num);
-}
-
-static void find_Oddeven(int num){
-  if(num%2==0) 
-      System.out.println(num+" is even"); 
-  else 
-      System.out.println(num+" is odd");
- }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        double n=sc.nextInt();
+        double m=sc.nextInt();
+        double pow=Math.pow(n,m);
+        System.out.printf(n+" raised to the power of "+m+" is: "+pow);
+    }
 }
 ```
+
+
+
+
+
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/8f7cdb15-9d19-4cc3-8d20-2c0a25af9899)
+
+<img width="970" height="340" alt="image" src="https://github.com/user-attachments/assets/6a12f552-19ef-4aab-af71-19801c15e3d1" />
+
 
 ## RESULT:
-Thus, the Java program to check whether a number is odd or even using a static method with a fixed input value (7) is successfully created and executed.
+Therefore the program successfully reads a number and calculates the power of a given number.
