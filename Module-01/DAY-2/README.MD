@@ -1,64 +1,67 @@
-# Ex.No:2(B) METHODS
+# Ex.No:1(B) CONDITIONAL STATEMENT
 
 ## QUESTION:
-Write a method void modifyValue(int num) that tries to modify the passed value(add passed value with 10) and print "Inside method: "+num .
-
-Show in main() that the original value does not change.
-
-After calling modifyValue(int num) method in main , print the "Outside method: "+num
+- A pirate ship has a code lock that only opens if:
+-   The input code is even, and
+-      If it is less than 100, say "Weak Code".
+-      If it is between 100 and 999, say "Strong Code".
+-   If the code is odd, deny access -"Access Denied".
 
 ## AIM:
-To write a Java program that demonstrates how primitive data is passed by value in methods.
+To write a Java program that accepts a code number and determines the security level based on the given conditions:
+
+- If the code is even and less than 100 → Display "Weak Code"
+- If the code is even and between 100 and 999 → Display "Strong Code"
+- Otherwise → Display "Access Denied"
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3. Define a method modifyValue(int num) that adds 10 to num and prints it.
-4.	In main(), declare num and assign a value (e.g., 20).
-5.	Call modifyValue(num) to show modification inside the method.
-6.	Print the value of num outside the method to show it remains unchanged.
-7.	End the program.
-
-
-
-
+- Start the program.
+- Create a Scanner object to read input from the user.
+- Read an integer value from the user and store it in variable 'code'.
+- Check if 'code' is even (code % 2 == 0): a. If 'code' is less than 100: - Print "Weak Code". b. Else if 'code' is between 100 and 999 (inclusive): - Print "Strong Code". c. Else: - Print "Access Denied".
+- If 'code' is odd: Print "Access Denied".
+- End the program.
 
 ## PROGRAM:
  ```
-Program to implement a Methods using Java
+Program to implement a conditional statement using Java
 Developed by: K Muni Tejeshwar
-RegisterNumber:  2122230102
+RegisterNumber:  212223040102
 ```
 
 ## SOURCE CODE:
 
-```
-import java.util.Scanner;
-class prog {
-    public static void modifyValue(int num) {
-        num = num + 10;
-        System.out.println("Inside method: " + num);
-    }
 
-    public static void main(String[] args) {
- Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        modifyValue(x);
-        System.out.println("Outside method: " + x);
+```java
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        if(num%2==0){
+            if(num<100){
+                System.out.println("Weak Code");
+            }
+            else if(num>=100 & num<=999){
+                System.out.println("Strong Code");
+            }
+            else{
+                System.out.println("Access Denied");
+            }
+        }
+        else{
+            System.out.println("Access Denied");
+        }
+        
     }
 }
 ```
 
 
-
-
-
 ## OUTPUT:
+<img width="919" height="396" alt="image" src="https://github.com/user-attachments/assets/ccc0b281-ac3a-4018-81c7-536c9e6db51f" />
 
-<img width="1154" height="333" alt="image" src="https://github.com/user-attachments/assets/74c788f6-c707-4fbf-92c1-8c14b3f6ee05" />
 
 
 ## RESULT:
-The program successfully shows that primitive data types in Java are passed by value, so changes inside the method don’t affect the original variable.
-
-
+Therefore,the program has been executed successfully.
