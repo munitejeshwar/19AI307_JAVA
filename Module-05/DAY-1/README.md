@@ -1,71 +1,62 @@
-# Ex.No:5(A)  DATA HIDING AND ENCAPSULATION
+# Ex.No:5(A) INPUTSTREAMREADER 
+
+## QUESTION:
+Write a program to demonstrate chaining of streams (BufferedReader on top of InputStreamReader on top of System.in)
+
 ## AIM:
-To Create a java program to display name and location of the employee and use the encapsulation concepts
+To write a Java program that demonstrates stream chaining by placing a BufferedReader on top of an InputStreamReader, which in turn wraps System.in, and then reading user input using this chained stream.
 
 ## ALGORITHM :
-1.  Start the program
-2.	Define class `Employee`:
--	a) Declare two private `String` variables: `name1` and `name2`
--	b) Define `setname(String n1)` method to set `name1` to `n1`
--	c) Define `setname2(String n2)` method to set `name2` to `n2`
--	d) Define `get1()` method to return `name1`
--	e) Define `get2()` method to return `name2`
-3.	Define `Main` class with `main` method:
--	a) Create `Scanner` object `sc` for input
--	b) Read `name1` and `name2` from user input
--	c) Create ` Employee ` object `hl`
--	d) Use `hl.setname(name1)` and `hl.setname2(name2)` to set the names
--	e) Print the values of `hl.get1()` and `hl.get2()`
-4.	End
+1. Create a BufferedReader object by chaining:
 
+2. System.in → InputStreamReader → BufferedReader.
 
+3. Inside a try block Use readLine() to read the user's name.
+
+4. Use readLine() again to read the user's age.
+
+5. Print the collected details.
+
+6. Catch any IOException and display an appropriate error message.
 
 
 
 ## PROGRAM:
- ```
-/*
-Program to implement a Data Hiding & Encapsulation using Java
+```
+Program to implement a InputStreamReader using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-```
-import java.util.*;
-public class java{
-    private long a;
-    void set(long x)
-    {
-        this.a=x;
+public class ChainingStreamsExample {
+    public static void main(String[] args) {
+        // Chaining: System.in -> InputStreamReader -> BufferedReader
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            String name = br.readLine();
+            String age = br.readLine();
+            System.out.println("--- User Details ---");
+            System.out.println("Name: " + name);
+            System.out.println("Age: " + age);
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
     }
-    void get()
-    {
-        System.out.println(this.a);
-    }
-
-public static void main(String[] args)
-{
-    java j=new java();
-    Scanner s=new Scanner(System.in);
-    long l=s.nextLong();
-    j.set(l);
-    j.get();
-    
-    
-}
 }
 ```
-
-
-
 
 
 ## OUTPUT:
-<img width="538" alt="Image" src="https://github.com/user-attachments/assets/bac8da47-50db-490a-bad8-d21aabcb06ba" />
+<img width="827" height="557" alt="image" src="https://github.com/user-attachments/assets/b647d19d-16b6-48c7-8343-acca2fb720ec" />
 
 
 ## RESULT:
-Thus , the  java program to display name and location of the employee and use the encapsulation concepts executed successfully.
+Therefore the program successfully demonstrates chaining of input streams by reading user data through a BufferedReader wrapped over an InputStreamReader.
+
+
