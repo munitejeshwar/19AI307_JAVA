@@ -1,68 +1,83 @@
-# Ex.No:2(A)  STATIC METHOD
+# Ex.No:2(A) CLASS AND OBJECT
 
+## QUESTION:
+Define a class Car with brand (String), color (String), and year (int). Create 2 different objects of Car  Assign values to attributes. Print the details of both cars.import java.util.Scanner;
 ## AIM:
-To create a java program for calculate cube of a number using static method.
+To define a class Car with attributes brand, color, and year; create two objects of the class; assign values to their attributes; and print the details of both cars.
 
 ## ALGORITHM :
-1.  Start : Begin the process of calculating the cube of a number.
-2.	Declare a variable to store input : Declare an integer variable n to hold the number whose cube will be calculated.
-3.	Create a Scanner object : Create a Scanner object (sc) to read the input from the user.
-4.	Read input from the user : Prompt the user to input an integer value. The input value is stored in the variable n.
-5.	Call the cubecal function : Call the function cubecal(n) which computes the cube of the number by performing n * n * n.
-6.	Store the result : Store the result of the cubecal function in an integer variable result.
-7.	Output the result :
-8.	Print the cube of the number using System.out.println("Cube is: " + result);.
-9.	End the program.
+1. Define a class Car with three data members:
 
+     String brand
+     String color
+     int year
+ and a method printDetails() to display these values.
 
+2. In the main() method, create a Scanner object to read user inputs.
+
+3. Create the first object car1 and read its brand, color, and year from the user.
+
+4. Create the second object car2 and read its brand, color, and year.
+
+5. Call printDetails() for car1 to display its information.
+
+6. Call printDetails() for car2 to display its information.
+
+7.Close the scanner and end the program.
 
 
 ## PROGRAM:
- ```
-/*
-Program to implement a Static method using Java
+```
+Program to implement a Class and Objects using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-
-*/
 ```
 
-## Sourcecode.java:
-
-```
+## SOURCE CODE:
+```java
 import java.util.Scanner;
 
-public class CubeCalculator {
+class Car {
+    String brand;
+    String color;
+    int year;
 
-    public static int calculateCube(int number) {
-        return number * number * number;
+    void printDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Color: " + color);
+        System.out.println("Year: " + year);
     }
+}
 
+class prog {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int inputNumber = scanner.nextInt();
-        int cube = calculateCube(inputNumber);
-        System.out.println("Cube is: " + cube);
+
+        
+        Car car1 = new Car();
+        car1.brand = scanner.nextLine();
+        car1.color = scanner.nextLine();
+        car1.year = scanner.nextInt();
+        scanner.nextLine();
+
+        
+        Car car2 = new Car();
+        car2.brand = scanner.nextLine();
+        car2.color = scanner.nextLine();
+        car2.year = scanner.nextInt();
+
+        car1.printDetails();
+        car2.printDetails();
 
         scanner.close();
     }
 }
-
 ```
 
 
-
-
-
-
-
 ## OUTPUT:
-
-
-<img width="386" alt="image" src="https://github.com/user-attachments/assets/4756def7-b7e2-42ec-acf4-fde55b23fcf0" />
-
+<img width="597" height="685" alt="image" src="https://github.com/user-attachments/assets/05ebe553-f279-4f17-b125-675b4afd47bd" />
 
 
 ## RESULT:
-Thus the java program for calculate cube of a number using static method has been executed successfully.
-
+Therefore,the program successfully creates two Car objects and assigns values to their attributes.
