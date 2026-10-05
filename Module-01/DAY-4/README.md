@@ -1,36 +1,25 @@
-# Ex.No:1(D) USER DEFINED METHOD.
+# Ex.No:1(D) ARRAYS
+
+## QUESTION:
+Write a Java program to reverse an array
 
 ## AIM:
-To write a Java program to calculate and print the area of a circle by defining an instance method and using local variables. The class name is Area, the method name is calculateArea(), and the return type is void.
+To write a java program to reverse an array
 
 ## ALGORITHM :
-1. Start the program.
+- Start the program.
 
-2. Import the `java.util` package.
+- Import the java.util.Scanner package.
 
-3. Define a class named `Area`.
+- Read the integer n representing the size of the array from the user.
 
-4. Declare an instance method named `calculateArea()` with return type `void`.
+- Declare an integer array arr of size n.
 
-5. Inside the method:
-   
-   a) Create a `Scanner` object to read user input.
-   
-   b) Declare local variables `radius` and `cirarea`.
-   
-   c) Read the radius value from the user.
-   
-   d) Calculate the area using the formula `3.14 * radius * radius`.
-   
-   e) Print the calculated area.
+- Loop through 0 to n - 1 to accept and store n array elements.
 
-6. In the `main` method:
-   
-   a) Create an object of the `Area` class.
-   
-   b) Call the `calculateArea()` method using the object.
+- Loop backwards from n - 1 down to 0 and print each element of the array.
 
-7. End the program.
+- Stop the program.
 
 
 
@@ -38,34 +27,34 @@ To write a Java program to calculate and print the area of a circle by defining 
 
 ## PROGRAM:
  ```
-/*
-Program to implement a User Defined Method using Java
+Program to implement a Array concept using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
-```   
-import java.util.*;
-public class Area {
-        double calculateArea()
-    {
-        double radius,cirarea;
+## SOURCE CODE:
+
+```java
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        radius=sc.nextDouble();
-        cirarea=3.14*radius*radius;
-        return cirarea;
-    }
-        public static void main(String[] args) {
-       Area obj=new Area();
-       double area=obj.calculateArea();
-       System.out.println("Area of Circle is "+area);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        float sum=0;
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=n-1;i>=0;i--){
+            System.out.print(arr[i]+" ");
+        }
     }
 }
 ```
+
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/ed252e49-6612-47ca-b513-113432021f3c)
+<img width="721" height="639" alt="image" src="https://github.com/user-attachments/assets/33087eb3-ac3f-4c43-9e9c-a783664e58b1" />
+
 
 ## RESULT:
-Thus, the Java program to calculate the area of a circle using an instance method and local variables with a void return type is successfully created and executed.
+Therefore the program successfully reverse an array.
