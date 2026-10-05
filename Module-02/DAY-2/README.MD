@@ -1,69 +1,70 @@
-# Ex.No:2(B) ACCESS MODIFIERS
+# Ex.No:2(B) METHODS
+
+## QUESTION:
+Write a method int cube(int x) that calls a method int square(int x) internally to calculate the cube as x * square(x).
 
 ## AIM:
-To develop a Java Program to display the addition number using private modifiers only.
+To write a Java program that defines a method cube(int x) which internally calls the method square(int x) to compute the cube of a number.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Define a class named `addition`
-3.	Declare two private integer variables, `num1` and `num2`
-4.	Define a private method `add()` that:
-a)	Returns the sum of `num1` and `num2`
-5.	Define a public method `display(int n1, int n2)` that:
-a)	Assigns `n1` to `num1` and `n2` to `num2`
-b)	Calls the `add()` method and prints the result using `System.out.println`
-6.	Define the `main` method as static
-a)	Create an instance of the `addition` class called `ad`
-b)	Call the `display(8, 9)` method on the `ad` object
-7.	End
+1. Define a class demo with two methods:
 
+     square(int n) → returns n * n.
+     cube(int n) → returns n * square(n) by calling the square() method internally.
 
+2. In the main class, read an integer input from the user.
+
+3. Create an object of the demo class.
+
+4. Call the cube() method using the object and print the result.
+
+5. End the program.
 
 
 
 
 ## PROGRAM:
- ```
-/*
-Program to implement a access modifiers using Java
+```
+Program to implement a Methods using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
 
-```
-public class A
-{ 
-    private void display() 
-    { 
-        int a=8,b=9;
-        System.out.println(a+b); 
-    }
-    public static void main(String args[])
+```java
+import java.util.*;
+class demo
+{
+    public int square(int n)
     {
-        A obj= new A();
-        obj.display();
+        return n*n;
+    }
+    public int cube(int n)
+    {
+        return n*square(n);
+    }
+    
+}
+public class main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        demo d=new demo();
+        System.out.println(d.cube(n));
     }
 }
-
 ```
-
-
 
 
 
 
 ## OUTPUT:
+<img width="392" height="243" alt="image" src="https://github.com/user-attachments/assets/aa929a40-c871-4a15-8d09-12604778a14b" />
 
-```
-Expected    Got 
-
-17          17
-```
 
 ## RESULT:
-Thus the java program to display the addition number using private modifiers only was executed successfully.
 
-
+Therefore the program successfully computes the cube of a number by internally using the square method.
