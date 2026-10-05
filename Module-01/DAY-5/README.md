@@ -24,8 +24,8 @@ To write a Java program that determines whether a given number is odd or even us
  ```
 /*
 Program to implement a Static Variable using Java
-Developed by: SANTHOSH V
-RegisterNumber: 212224230252
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 */
 ```
 
