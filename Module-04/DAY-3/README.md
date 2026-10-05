@@ -1,23 +1,30 @@
-# Ex.No:4(C)    CONSTRUCTOR CHAINING(SUPER KEYWORD)
+# Ex.No:4(C)  COMPOSITION IN JAVA
+
+## QUESTION:
+A Department contains Professor objects, but professors can exist independently.
+If no inputs gets passed, print "No professors assigned."
 
 ## AIM:
-To Create a Java program to implement super keyword in constructor.
+To write a Java program demonstrating aggregation, where a Department contains multiple Professor objects, but professors can exist independently. If no professors are assigned, the program should display "No professors assigned.".
 
 ## ALGORITHM :
-1.  Start the Program.
-2.	Define class `College`:
--	a) Define method `display()` that prints "I am a Vehicle"
-3.	Define class `Student` that extends `College`:
--	a) Override method `display()` to print "I am a Car"
--	b) Define method `print()`:
--	i) Call `super.display()` to invoke `display()` from `College` class
--	ii) Call `this.display()` to invoke `display()` from `Student` class
-4.	Define `Main` class with `main` method:
--	a) Create a `Student` object `sc`
--	b) Call `sc.print()` to execute the `print()` method
-5.	End
+1. Create a Professor class with a name attribute and a constructor to initialize it.
 
+2. Create a Department class with a department name,an array of Professor objects,a counter to track assigned professors.
 
+3. Implement addProfessor() to store a professor in the array.
+
+4. Implement showProfessors() which prints the department name,checks whether any professors are assigned, prints "No professors assigned." if the count is zero,  otherwise prints the list of professors.
+
+5. Read the number of professors.
+
+6. Create professor objects only if input is provided.
+
+7. Read department name (with fallback default).
+
+8. Create a Department object and add professor objects into it.
+
+9. Call showProfessors() to display the results.
 
 
 
@@ -25,56 +32,82 @@ To Create a Java program to implement super keyword in constructor.
 
 ## PROGRAM:
  ```
-/*
-Program to implement a Constructor Chaining using Java
+Program to implement a Composition Concepts in Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
+```java
+import java.util.*;
 
-
-```
-class Parent {
-  void display(){
-    System.out.println("I am a Bird");
-  }
+class Professor {
+    String name;
+    Professor(String name) {
+        this.name = name;
+    }
 }
 
-class Child extends Parent{
+class Department {
+    String name;
+    Professor[] professors;
+    int count = 0;
 
-  public void  display(){
-    System.out.println("I am a Parrot");
-  }
+    Department(String name, int n) {
+        this.name = name;
+        professors = new Professor[n];
+    }
 
-  public void print(){
+    void addProfessor(Professor p) {
+        professors[count++] = p;
+    }
 
-    
-    this.display();
-
-    super.display();
-  }
+    void showProfessors() {
+        System.out.println("Department: " + name);
+        if (count == 0) {
+            System.out.println("No professors assigned.");
+        } else {
+            for (int i = 0; i < count; i++) {
+                System.out.println("- " + professors[i].name);
+            }
+        }
+    }
 }
 
 public class Main {
-  public static void main(String[] args) {
-    Child obj = new Child();
-    obj.print();
-  }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine(); // consume newline
+
+        Professor[] profs = new Professor[n];
+        for (int i = 0; i < n; i++) {
+            if (sc.hasNextLine()) {
+                profs[i] = new Professor(sc.nextLine());
+            }
+        }
+
+        String deptName = "Computer Science";
+        if (sc.hasNextLine()) {
+            deptName = sc.nextLine().replace("Department: ", "");
+        }
+
+        Department dept = new Department(deptName, n);
+        for (Professor p : profs) {
+            dept.addProfessor(p);
+        }
+
+        dept.showProfessors();
+        sc.close();
+    }
 }
 ```
 
 
-
-
 ## OUTPUT:
-<img width="526" alt="Image" src="https://github.com/user-attachments/assets/4acb3b1c-abc0-4bf7-a945-71cfde631a61" />
+<img width="828" height="292" alt="image" src="https://github.com/user-attachments/assets/4e69935f-7724-441c-b2cb-952384232733" />
+
 
 
 ## RESULT:
-Thus the java program for constructor chaining was executed successfully.
-
-
-
-
+Therefore the program successfully demonstrates aggregation by associating independent Professor objects with a Department.
