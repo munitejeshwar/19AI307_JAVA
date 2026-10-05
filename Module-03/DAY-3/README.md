@@ -1,58 +1,132 @@
-# Ex.No:3(C)    STRING BUILDER IN JAVA
+# Ex.No:3(C) ABSTRACTION
+
+## QUESTION:
+In a secret intelligence facility, encrypted messages are stored as arrays of characters. Each type of agent has a different way to decode these messages. Define an abstract class Decoder with a method decodeMessage(String[] fragments).
+There are two types of agents:
+
+   AlphaAgent: Extracts a meaningful string by rearranging the fragments based on even indices first, then odd indices, and then reversing the final result.
+
+   BetaAgent: Picks all fragments that start and end with the same letter, joins them with -, and removes all vowels from the resulting string.
+
 
 ## AIM:
-To Create a java program use replace() method replaces the given String from the specified beginIndex and endIndex and use stringbuilder
+To create an abstract class Decoder with an abstract method decodeMessage(), and implement two subclasses, AlphaAgent and BetaAgent, each with a unique decoding technique for encrypted message fragments.
 
 ## ALGORITHM :
-1.  Start the Program
-2.	Import `Scanner` and define class `replace`
-3.	In `main`:
--	a) Create `Scanner` object `sc`
--	b) Read a string `str` from user input
-4.	Create a `StringBuilder` object `sb` initialized with `str`
-5.	Use the `replace()` method to replace characters from index 1 to 3 with "Java"
-6.	Print the modified string using `sb.toString()`
-7.	End
+1. Create an abstract class Decoder containing an abstract method decodeMessage(String[] fragments).
 
+2. Create subclass AlphaAgent implementing decodeMessage() by collecting fragments at even indices,then collecting fragments at odd indices,reversing the combined list.
+
+3. Joining all fragments into one decoded string.
+
+4. Create subclass BetaAgent implementing decodeMessage() by selecting fragments whose first and last characters match (case-insensitive).
+
+5. Joining selected fragments using -.
+
+6. Removing all vowels from the final combined string.
+
+7. Read number of fragments and store them in a string array.
+
+8. Read agent type (1 = AlphaAgent, 2 = BetaAgent).
+
+9. Create the corresponding agent object.
+
+10. Call decodeMessage() and print the decoded output.
 
 
 
 
 
 ## PROGRAM:
- ```
-/*
-Program to implement a String Builder using Java
+```
+Program to implement a Abstraction using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
-```
-import java.util.Scanner;
+## SOURCE CODE:
 
-public class StringBuilderAppend {
+```java
+import java.util.*;
 
+abstract class Decoder {
+    abstract String decodeMessage(String[] fragments);
+}
+
+
+class AlphaAgent extends Decoder {
+    @Override
+    String decodeMessage(String[] fragments) {
+        List<String> ordered = new ArrayList<>();
+        
+        for (int i = 0; i < fragments.length; i += 2) {
+            ordered.add(fragments[i]);
+        }
+       
+        for (int i = 1; i < fragments.length; i += 2) {
+            ordered.add(fragments[i]);
+        }
+       
+        Collections.reverse(ordered);
+        
+        StringBuilder result = new StringBuilder();
+        for (String s : ordered) {
+            result.append(s);
+        }
+        return result.toString();
+    }
+}
+
+
+class BetaAgent extends Decoder {
+    @Override
+    String decodeMessage(String[] fragments) {
+        List<String> selected = new ArrayList<>();
+        for (String f : fragments) {
+            if (!f.isEmpty()) {
+                char first = Character.toLowerCase(f.charAt(0));
+                char last = Character.toLowerCase(f.charAt(f.length() - 1));
+                if (first == last) {
+                    selected.add(f);
+                }
+            }
+        }
+
+        String joined = String.join("-", selected);
+        return joined.replaceAll("[AEIOUaeiou]", "");
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        scanner.close();
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine().trim());
+        String[] fragments = new String[n];
+        for (int i = 0; i < n; i++) {
+            fragments[i] = sc.nextLine().trim();
+        }
+        int type = Integer.parseInt(sc.nextLine().trim());
 
-        StringBuilder sb1 = new StringBuilder(input); // Initialize with input
-        sb1.append("s");
+        Decoder agent;
+        if (type == 1)
+            agent = new AlphaAgent();
+        else
+            agent = new BetaAgent();
 
-        System.out.println("sb1 = " + sb1.toString());
+        System.out.println(agent.decodeMessage(fragments));
+        sc.close();
     }
 }
 ```
 
-## OUTPUT:
 
-<img width="396" alt="Image" src="https://github.com/user-attachments/assets/a4d4c276-cb4b-497b-9c75-2ec65537a593" />
+
+
+
+## OUTPUT:
+<img width="791" height="586" alt="image" src="https://github.com/user-attachments/assets/8e5ac67e-a125-4db4-b804-52e16025fa7e" />
+
+
 
 ## RESULT:
-Thus the java program use replace() method replaces the given String from the specified beginIndex and endIndex and use stringbuilder was executed successfully.
-
-
-
+Therefore the program successfully decodes messages using the rules defined for AlphaAgent and BetaAgent.
