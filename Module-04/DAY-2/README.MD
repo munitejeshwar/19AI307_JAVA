@@ -34,8 +34,8 @@ To simulate an airport radar communication system using the Singleton pattern, e
 ## PROGRAM:
  ```
 Program to implement a SOLID Principles in Java Program
-Developed by: P PARTHIBAN
-RegisterNumber: 212223230145
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 ```
 
 ## SOURCE CODE:
