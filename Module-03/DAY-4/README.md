@@ -21,8 +21,8 @@ To create a java program using StringTokenizer class that tokenizes a string "My
  ```
 /*
 Program to implement a String Tokenizer using Java
-Developed by: SANTHOSH V
-RegisterNumber: 212224230252
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 */
 ```
 
