@@ -26,8 +26,8 @@ b)  Call the display(8, 9) method on the ad object.
  ```
 /*
 Program to implement a String and its Operations using Java
-Developed by: SANTHOSH V
-RegisterNumber: 212224230252
+Developed by: K Muni Tejeshwar
+RegisterNumber:  212223040102
 */
 ```
 
