@@ -1,53 +1,64 @@
-# Ex.No:1(C) CONTROL STATEMENTS
+# Ex.No:1(C) LOOPING STATEMENT
+
+## QUESTION:
+Write a Java program that prompts the user to enter a non-negative integer and then calculates and displays the factorial of the given number.
+
+- Use a for loop to perform the calculation.
+
+- Make sure to handle the case when the user enters 0.
+
+- Display the result in a clear and user-friendly way.
 
 ## AIM:
-To develop a Java program to check given number is zero or not.
+To write a java program to calculate and display the factorial of the given number.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Declare an integer variable 'num'
-3.	Create a Scanner object 'sc' to read input from the user
-4.	Read an integer input from the user and store it in 'num'
-5.	Check if 'num' is equal to 0:
-a.	If true, print "Given number is Zero"
-b.	If false, print 'num' followed by " is Non-Zero"
-6.	End
+- Start the program and prompt the user to enter a non-negative integer n.
+- Read the integer n.
+- Check if n < 0.
+- If true, display an error message for invalid input.
+- If n = 0 or n = 1, set the result/factorial to 1.
+- If n > 1, initialize fact = 1 and loop i from 1 to n, multiplying fact by i in each iteration.
+- Print the resulting factorial value.
+- End the program.
 
 ## PROGRAM:
  ```
-/*
-Program to implement a class & objects using Java
+Program to implement a Looping Statement using Java
 Developed by: K Muni Tejeshwar
 RegisterNumber:  212223040102
-*/
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
 
-```
+
+```java
 import java.util.Scanner;
-
-public class Demo
-{
-    public static void main(String[] args)
-    {
-       Scanner sc=new Scanner(System.in);
-       int num=sc.nextInt();
-        if(num==0)
-        System.out.println("Given number is Zero");
-        else
-        {
-        	 System.out.println(num+ " is Non-Zero");
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int fact=1;
+        if(n==0){
+            System.out.println("Factorial of 0 is: "+fact);
+        }
+        else{
+            for(int i=1;i<=n;i++){
+                fact=fact*i;
+            }
+            System.out.println("Factorial of "+n+" is: "+fact);
         }
     }
 }
-
-
 ```
 
+
+
+
 ## OUTPUT:
-<img width="504" alt="image" src="https://github.com/user-attachments/assets/9b9a2b38-6e99-4eba-b01f-e2e592e15150" />
+
+<img width="796" height="338" alt="image" src="https://github.com/user-attachments/assets/524c0133-a9fb-43c0-84d0-f6a28bd09283" />
+
 
 ## RESULT:
-Thus, the Java program to check given number is zero or not was created successfully.
-
+Therefore, the program successfully reads a number from the user and computes its factorial.
